@@ -21,6 +21,9 @@ But : reproduire l'offre du concurrent (paliers, prix, badge, cadeau, palier par
    - `offers: {"$replace": [...]}` avec **exactement** le nombre de paliers du concurrent (chaque palier : quantité,
      remise, titre, badge, palier par défaut…) ;
    - couleurs (`design`) si l'offre du concurrent en a.
+   - cadeau offert : `settings.featuresEnabled.gift: true` et `gifts: {"$replace": [...]}`. Pièges vus en test :
+     `match` s'écrit `">=,1"` (palier 1 et suivants ; `"==,2"` = palier 2 seulement), et `variant` doit contenir
+     `show`, `show_options`, `confirm_button_text`, `toggle_button_text`. Le cadeau doit exister comme produit Shopify.
    Premier appel sans `merchantConfirmed` = aperçu. **Résumer l'offre à l'élève en 3 lignes, attendre son « ok »**,
    puis rappeler avec les mêmes arguments + `merchantConfirmed: true`. L'offre est créée en brouillon.
 5. Montrer l'aperçu : `storefrontPreviewUrl` renvoyé par l'outil (boutique protégée : l'élève doit être connecté).
