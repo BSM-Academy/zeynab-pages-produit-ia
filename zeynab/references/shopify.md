@@ -14,6 +14,7 @@ la confirmation de l'élève). Toujours découvrir les champs avec `graphql_sche
 - Puis `publishablePublish` vers la publication **Online Store** (`publications` pour trouver son ID).
 - Sans variante : `productOptions: [{name: "Title", values: [{name: "Default Title"}]}]` et
   `variants: [{optionValues: [{optionName: "Title", name: "Default Title"}], price: "…"}]`.
+- **Pas d'image sur les variantes** : sinon la galerie s'ouvre sur la photo de la variante au lieu de la 1re image.
 - Cadeau : même méthode (prix réel barré, image IA). Cadeau numérique : `requiresShipping: false`.
 
 ## Fichiers (images de section)
@@ -51,6 +52,11 @@ la confirmation de l'élève). Toujours découvrir les champs avec `graphql_sche
   <img src='{{ "x_s01_D.png" | file_img_url: "1800x" }}' alt='…' loading='lazy'></picture></div>
   <style>.zy-img img{display:block;width:100%;height:auto}</style>
   ```
+- Images **`.webp`** : `file_img_url` ne les trouve pas (« No image ») → lien direct
+  `https://cdn.shopify.com/s/files/<…>/files/<nom>.webp?width=800` (lire le début de l'URL dans `files { url }`).
+- Limite Shopify : **50 Ko par bloc `custom_liquid`**. Section trop lourde (ex. 100 avis) → mettre les données dans
+  un fichier `assets/<suffixe>-x.js` de la copie (`themeFilesUpsert`), chargé au clic via `{{ '<suffixe>-x.js' | asset_url }}`.
+- Bouton « voir plus d'avis » : 3 avis affichés, +15 à chaque clic, bouton caché à la fin. **Tester le clic.**
 - Accordéons : `<details><summary>…</summary>…</details>`. Vidéos : `<video autoplay muted loop playsinline>`.
 - Libellé du bouton du thème : le changer en CSS dans un bloc (`font-size:0` sur le texte + `::after{content:'…'}`),
   jamais en JavaScript. Le sélecteur dépend du thème : le lire dans le HTML de l'aperçu.

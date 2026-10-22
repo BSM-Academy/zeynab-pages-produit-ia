@@ -20,6 +20,9 @@ But : un inventaire assez précis pour reconstruire la page **à l'identique**, 
 ## 3. Avis
 - Avis natifs : texte dans le HTML.
 - **Loox** = iframe : récupérer le texte avec `curl` sur l'URL `loox.io/widget/...` trouvée dans la page.
+- **Doran** (et autres applis d'avis) = iframe sans adresse : l'ouvrir dans le navigateur, lire
+  `iframe.contentDocument`, cliquer « voir plus » jusqu'au bout pour avoir **tous** les avis (nom, étoiles, titre, texte,
+  photo). Reprendre la section avis **à l'identique** (même mise en page), pas une version « maison ».
 - Garder prénom + texte, traduire. Photos d'avis : reprendre celles du concurrent ou les régénérer.
 
 ## 4. Offres de packs

@@ -42,7 +42,11 @@ Ne poser une question que si un fait change vraiment le résultat. Sinon décide
 5. **Ne jamais toucher au thème en ligne** : tout se construit dans une **copie** du thème, l'élève publie.
 6. Un modèle **par produit** (`templates/product.<suffixe>.json`), et le produit **assigné** à ce modèle.
 7. Rien de supprimé, rien d'écrasé chez l'élève sans lui demander.
-8. Moonbundle demande l'accord de l'élève avant chaque création ou publication : résumer l'offre en clair, attendre « ok ».
+8. **Copier aussi le style** du concurrent, pas seulement ses sections : police, couleurs, tailles, icônes,
+   disposition de chaque bloc. Jamais de section ni de mise en page « à sa sauce », jamais d'emojis ajoutés.
+9. Relever la page **jusqu'au pied de page** : les sections sous les avis (produits complémentaires, philosophie,
+   garantie, accordéons, barre d'icônes) et les boutons (« voir plus d'avis ») comptent aussi, et doivent marcher.
+10. Moonbundle demande l'accord de l'élève avant chaque création ou publication : résumer l'offre en clair, attendre « ok ».
 
 ## Étapes
 Travailler dans `travail/<handle-concurrent>/` (jamais versionné). Tenir `travail/<…>/ETAT.md` à jour
